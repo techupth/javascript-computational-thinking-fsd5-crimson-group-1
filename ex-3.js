@@ -88,4 +88,6 @@ for (let i = 0; i < orders.length; i++) {
     totalAmount = orders[i].productPrice * orders[i].productQuantity;
   }
 }
-console.log(`Total paid amount of Birdie Shepland: ${totalAmount} Baht`);
+console.log(
+  `Total paid amount of Birdie Shepland: ${totalAmount.toLocaleString()} Baht`
+);

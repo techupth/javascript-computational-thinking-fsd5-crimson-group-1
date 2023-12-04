@@ -80,16 +80,18 @@ let orders = [
     creditCardType: "visa-electron",
   },
 ];
-let totalAmount = 0;
-let totalJcbPaidAmount = 0;
 
-for (let i = 0; i < orders.length; i++) {
-  if (orders[i].creditCardType === "jcb") {
-    totalAmount = orders[i].productPrice * orders[i].productQuantity;
-    totalJcbPaidAmount = totalAmount + totalJcbPaidAmount;
+function findTotalAmount(orders) {
+  let totalAmount = 0;
+  let totalAmountPerOrder = 0;
+
+  for (let i = 0; i < orders.length; i++) {
+    totalAmountPerOrder = orders[i].productQuantity * orders[i].productPrice;
+    totalAmount = totalAmount + totalAmountPerOrder;
   }
+  return console.log(
+    `Total amount of the orders: ${totalAmount.toLocaleString()} Baht`
+  );
 }
 
-console.log(
-  `Paid by JCB credit card amount ${totalJcbPaidAmount.toLocaleString()} Baht`
-);
+findTotalAmount(orders);

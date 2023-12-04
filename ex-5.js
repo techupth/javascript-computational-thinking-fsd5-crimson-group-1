@@ -94,5 +94,5 @@ for (let i = 0; i < orders.length; i++) {
 }
 
 console.log(
-  `The most expensive order is order id ${mostPurchasedID} ( ${mostTotalAmountPerOrder} Baht )`
+  `The most expensive order is order id ${mostPurchasedID} ( ${mostTotalAmountPerOrder.toLocaleString()} Baht )`
 );
