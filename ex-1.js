@@ -82,3 +82,19 @@ let orders = [
 ];
 
 // Start coding here
+// 1. ระบุปัญหา = ใช้ For Loop ในการหามูลค่าคำสั่งซื้อทั้งหมด
+// 2. วิธีแก้ไขปัญหา
+//    - นำราคาสินค้าไปคูณกับจำนวนสินค้าของแต่ละคน
+//    - นำราคาสินค้าของแต่ละคนมารวมกัน
+//    - แสดงผลออกมาทางหน้าจอ
+let totalAmount = 0;
+for (let i = 0; i < orders.length; i++) {
+  totalAmount =
+    orders[i]["productPrice"] * orders[i]["productQuantity"] + totalAmount;
+}
+
+console.log(
+  "Total amount of the orders: " +
+    totalAmount.toLocaleString(totalAmount) +
+    " Baht"
+);

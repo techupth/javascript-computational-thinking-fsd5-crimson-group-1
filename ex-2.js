@@ -82,3 +82,21 @@ let orders = [
 ];
 
 // Start coding here
+// ปัญหา = ให้ใช้ For Loop หาผลรวมของคำสั่งซื้อที่จ่ายด้วยบัตรเครดิตประเภท jcb จาก orders
+// วิธีการแก้ไขปัญหา
+//  - หาว่าใครใช้ JCB บ้าง
+//  - นำผลการคูณกันระหว่างราคาสินค้าและจำนวนสินค้าของผู้จ่ายด้วยบัตร jcb แต่ละคนมารวมกัน
+//  - แสดงผลออกมาทางหน้าจอ
+let totalJCBAmount = 0;
+for (let i = 0; i < orders.length; i++) {
+  if (orders[i]["creditCardType"] === "jcb") {
+    totalJCBAmount =
+      orders[i]["productPrice"] * orders[i]["productQuantity"] + totalJCBAmount;
+  }
+}
+
+console.log(
+  "Paid by JCB credit card amount: (" +
+    totalJCBAmount.toLocaleString(totalJCBAmount) +
+    " Bath)"
+);
