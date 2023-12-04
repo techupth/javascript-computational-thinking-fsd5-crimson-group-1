@@ -89,7 +89,7 @@ let orders = [
 //    แล้วเก็บค่าในvar แยก
 // วนจนครบแล้วแสดงผล
 
-let maxPrice = -1;
+let maxPrice = null;
 let mostExpensiveProductName = null;
 
 for (let i = 0; i < orders.length; i++) {
@@ -101,10 +101,6 @@ for (let i = 0; i < orders.length; i++) {
   }
 }
 
-if (mostExpensiveProductName !== null) {
-  console.log(
-    `The most expensive product in orders: ${mostExpensiveProductName}`
-  );
-} else {
-  console.log("No products found in orders.");
-}
+console.log(
+  `The most expensive product in orders: ${mostExpensiveProductName}`
+);
