@@ -105,5 +105,5 @@ console.log(
     mostPurchaseId +
     " (" +
     mostExpensiveOrder.toLocaleString(mostExpensiveOrder) +
-    ")"
+    " Bath)"
 );
