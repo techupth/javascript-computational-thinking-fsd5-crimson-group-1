@@ -82,3 +82,15 @@ let orders = [
 ];
 
 // Start coding here
+// เขียน loop วนซ้ำหาค่าที่มากที่สุด
+// ถ้าเจอค่าที่มากที่สุดให้เก็บไว้เทียบ
+
+let maxPrice = null;
+
+for (let i = 0; i < orders.length; i++) {
+  if (orders[i].productPrice > maxPrice) {
+    maxPrice = orders[i].productPrice;
+  }
+}
+
+console.log(maxPrice);

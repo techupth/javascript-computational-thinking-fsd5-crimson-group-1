@@ -81,4 +81,30 @@ let orders = [
   },
 ];
 
+// orders เป็น array ที่เก็บ object
+
 // Start coding here
+// เขียน Loop วนซ่้ำตามจำนวนของ array
+//  ถ้าค่ามากกว่าให้ใส่reassing แทน
+//    แล้วเก็บค่าในvar แยก
+// วนจนครบแล้วแสดงผล
+
+let maxPrice = -1;
+let mostExpensiveProductName = null;
+
+for (let i = 0; i < orders.length; i++) {
+  let currentProductPrice = orders[i].productPrice;
+
+  if (currentProductPrice > maxPrice) {
+    maxPrice = currentProductPrice;
+    mostExpensiveProductName = orders[i].productName;
+  }
+}
+
+if (mostExpensiveProductName !== null) {
+  console.log(
+    `The most expensive product in orders: ${mostExpensiveProductName}`
+  );
+} else {
+  console.log("No products found in orders.");
+}
