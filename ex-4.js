@@ -82,3 +82,18 @@ let orders = [
 ];
 
 // Start coding here
+// ปัญหา = ให้ใช้ For Loop หาชื่อของสินค้าที่มีราคาต่อชิ้นสูงที่สุดใน orders และนำชื่อสินค้านั้นมาแสดงผลบนหน้าจอ Console
+// วิธีการแก้ไขปัญหา
+//  - นำราคาสินค้าต่อชิ้นมาเปรียบเทียบกันโดยกำหนดตัวตั้งต้นให้เท่ากับ 0
+//  - เก็บค่าสินค้าที่มีราคาแพงกว่าไว้
+//  - แสดงผลชื่อสินค้าที่มีราคาสูงสุดออกมาทางหน้าจอ
+let mostExpensiveItem;
+for (let i = 0; i < orders.length; i++) {
+  if (i === 0) {
+    mostExpensiveItem = orders[i]["productPrice"];
+  } else if (mostExpensiveItem < orders[i]["productPrice"]) {
+    mostExpensiveItem = orders[i]["productName"];
+  }
+}
+
+console.log("The most expensive product in orders: " + mostExpensiveItem);
