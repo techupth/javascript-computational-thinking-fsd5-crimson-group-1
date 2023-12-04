@@ -82,3 +82,20 @@ let orders = [
 ];
 
 // Start coding here
+// ปัญหา = ให้ใช้ For Loop หาผลรวมของคำสั่งซื้อของ "Birdie Shepland"
+// วิธีการแก้ไขปัญหา
+//  - ค้นหาชื่อ "Birdie Shepland"
+//  - นำผลการคูณกันระหว่างราคาสินค้าและจำนวนสินค้าของ "Birdie Shepland" มารวมกัน
+//  - แสดงผลออกมาทางหน้าจอ
+let totalAmount = 0;
+for (let i = 0; i < orders.length; i++) {
+  if (orders[i]["customerName"] === "Birdie Shepland") {
+    totalAmount = orders[i]["productPrice"] * orders[i]["productQuantity"];
+  }
+}
+
+console.log(
+  "Total paid amount of Birdie Shepland: " +
+    totalAmount.toLocaleString(totalAmount) +
+    " Bath"
+);

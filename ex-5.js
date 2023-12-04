@@ -82,3 +82,28 @@ let orders = [
 ];
 
 // Start coding here
+// ปัญหา = ให้ใช้ For Loop หาคำสั่งซื้อที่มีมูลค่าสูงที่สุดใน orders และนำมูลค่านี้มาแสดงผลบนหน้าจอพร้อมกับเลข ID ของคำสั่งซื้อนั้น
+// วิธีการแก้ไขปัญหา
+//  - นำราคาสินค้าและจำนวนสินค้าใน object แต่ละอันมาคูณกัน
+//  - นำผลคูณทั้งหมดมาเปรียบเทียบกัน
+//  - เก็บค่าสินค้าที่มีราคาแพงกว่าไว้
+//  - แสดงผลออกมาเป็นทำดับของ id และผลรวมของราคาสูงสุดออกมาทางหน้าจอ
+let totalAmount = 0;
+let mostExpensiveOrder = 0;
+let mostPurchaseId = 0;
+
+for (let i = 0; i < orders.length; i++) {
+  totalAmount = orders[i]["productPrice"] * orders[i]["productQuantity"];
+  if (totalAmount > mostExpensiveOrder) {
+    mostExpensiveOrder = totalAmount;
+    mostPurchaseId = orders[i].id;
+  }
+}
+
+console.log(
+  "The most expensive order is order id " +
+    mostPurchaseId +
+    " (" +
+    mostExpensiveOrder.toLocaleString(mostExpensiveOrder) +
+    " Bath)"
+);
